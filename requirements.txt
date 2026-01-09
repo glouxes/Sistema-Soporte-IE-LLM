@@ -1,0 +1,13 @@
+# Extracción de Datos
+pymupdf==1.23.8          
+pytesseract==0.3.10      
+pdf2image==1.17.0        
+
+# Transformación y Validación
+jsonschema==4.21.1       
+
+# Conectores de Modelos
+google-generativeai   
+
+# Utilidades
+python-dotenv           

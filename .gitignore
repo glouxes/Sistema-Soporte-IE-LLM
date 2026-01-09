@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### AL ###
 #Template for AL projects for Dynamics 365 Business Central
 #launch.json folder
@@ -20,3 +21,13 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+=======
+venv/
+.env
+
+__pycache__/
+*.py[cod]
+
+data/outputs/*
+!data/outputs/.gitkeep
+>>>>>>> 3db1da3 (feat: estructura modular completa del sistema de soporte IE)

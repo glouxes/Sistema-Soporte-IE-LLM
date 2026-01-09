@@ -1,0 +1,68 @@
+{
+  "titulo": "Esquema_Extraccion_Datos_Fisicos",
+  "descripcion": "Estructura de datos fácticos para la extracción de información de documentos de una Persona Física.",
+  "type": "object",
+  "propiedades": {
+    "metadata_documento": {
+      "type": "object",
+      "descripcion": "Información del archivo fuente y la extracción.",
+      "propiedades": {
+        "identificador_documento": {
+          "type": "string",
+          "descripcion": "Hash o nombre único del archivo fuente."
+        },
+        "fecha_extraccion": {
+          "type": "string",
+          "formato": "date-time"
+        },
+        "fuente_original": {
+          "type": "string",
+          "enum": ["CURP", "ACTA_NACIMIENTO", "CV", "INE", "OTRO"],
+          "descripcion": "Tipo de documento del que se extrajo la información."
+        }
+      },
+      "requerido": ["identificador_documento", "fecha_extraccion"]
+    },
+    "datos_personales": {
+      "type": "object",
+      "descripcion": "Datos fácticos y de identificación de la persona.",
+      "propiedades": {
+        "nombre": {"type": "string"},
+        "apellido_paterno": {"type": "string"},
+        "apellido_materno": {"type": "string"},
+        "curp": {
+          "type": "string",
+          "patron": "^[A-Z]{4}[0-9]{6}[H,M][A-Z]{5}[0-9A-Z]{2}$",
+          "descripcion": "Clave Única de Registro de Población (18 caracteres)."
+        },
+        "rfc": {
+          "type": "string",
+          "patron": "^[A-Z&Ñ]{3,4}[0-9]{6}[A-Z0-9]{3}$",
+          "descripcion": "Registro Federal de Contribuyentes (con o sin homoclave)."
+        },
+        "fecha_nacimiento": {
+          "type": "string",
+          "formato": "date",
+          "descripcion": "Fecha en formato ISO 8601 (YYYY-MM-DD)."
+        },
+        "nacionalidad": {"type": "string"}
+      },
+      "requerido": ["nombre", "apellido_paterno", "curp"]
+    },
+    "domicilio_principal": {
+      "type": "object",
+      "descripcion": "Dirección completa del domicilio.",
+      "propiedades": {
+        "calle": {"type": "string"},
+        "numero_exterior": {"type": "string"},
+        "numero_interior": {"type": "string"},
+        "colonia": {"type": "string"},
+        "codigo_postal": {"type": "string"},
+        "municipio": {"type": "string"},
+        "estado": {"type": "string"}
+      },
+      "requerido": ["calle", "codigo_postal", "estado"]
+    }
+  },
+  "requerido": ["metadata_documento", "datos_personales"]
+}
