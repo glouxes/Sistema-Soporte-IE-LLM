@@ -39,4 +39,4 @@ def main(archivo_entrada, tipo_fuente="OTRO"):
         logger.error(f"Error crítico en el pipeline: {e}")
 
 if __name__ == "__main__":
-    main("data/inputs/mi_ine.pdf", tipo_fuente="INE")
+    main("data/inputs/ine.pdf", tipo_fuente="INE")
