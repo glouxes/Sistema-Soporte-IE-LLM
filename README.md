@@ -24,6 +24,7 @@ El repositorio está organizado siguiendo principios de modularidad:
 ├── check_models.py      # Script de verificación de conexión con Google AI
 ├── requirements.txt     # Dependencias del proyecto
 └── .env                 # Variables de entorno (API Keys)
+```
 
 ## Requisitos de instalación
 
