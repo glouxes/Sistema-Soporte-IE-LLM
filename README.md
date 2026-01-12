@@ -12,6 +12,7 @@ Este proyecto es un motor inteligente de **Extracción, Transformación y Carga 
 
 El repositorio está organizado siguiendo principios de modularidad:
 
+```text
 ├── data/
 │   ├── inputs/          # Documentos PDF a procesar (INE, CURP, etc.)
 │   └── schema/          # Definición del Golden Set (golden_set.json)
@@ -29,13 +30,20 @@ El repositorio está organizado siguiendo principios de modularidad:
 Este proyecto requiere tener instalados en el sistema:
 
  **Tesseract OCR** 
-Link de descarga: https://github.com/UB-Mannheim/tesseract/wiki
-Deberá descargar el archivo llamado tesseract-ocr-w64-setup-5.x.x.exe
-Nota: Durante la instalación, busque la sección de "Additional script data" y "Additional language data" y marque la casilla de Spanish (Español) para que reconozca tildes y la "ñ".
 
-** Poppler (para conversión de PDF a imagen)**
+Link de descarga: https://github.com/UB-Mannheim/tesseract/wiki
+
+Deberá descargar el archivo llamado tesseract-ocr-w64-setup-5.x.x.exe
+
+Nota: Durante la instalación, busque la sección de "Additional script data" y "Additional language data" 
+y marque la casilla de Spanish (Español) para que reconozca tildes y la "ñ".
+
+**Poppler (para conversión de PDF a imagen)**
+
 Poppler no tiene un instalador tradicional, se descarga como una carpeta de archivos binarios que se deben descomprimir.
+
 Link de descarga: [Poppler for Windows (vía @oschwartz10612)](https://github.com/oschwartz10612/poppler-windows/releases/)
+
 Deberá descargar el archivo .zip de la versión más reciente (ej. Release-24.08.0-0.zip).
 Descomprímalo en una ruta sencilla, por ejemplo: D:\poppler.
 
@@ -47,11 +55,14 @@ tesseract_path=r'D:\Tesseract-OCR\tesseract.exe', poppler_path=r"D:\poppler-25.0
 ## Variables de entorno
 
 Dado que se trabaja con un modelo de lenguaje es necesario trabajar con una llave de acceso, esta se puede descargar en el link https://aistudio.google.com/app/api-keys. 
+
 Una vez creada la llave se deberá crear una carpeta llamada "venv" en la raiz del proyecto.
 Cree un nuevo archivo en la raiz del proyecto  nombrándolo ".env", copie el siguiente contenido agregando la api key previamente creada:
 
 GOOGLE_API_KEY="Su_API_Key_sin_comillas"
+
 ENV=development
+
 LOG_LEVEL=INFO
 
 
